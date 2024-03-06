@@ -7,6 +7,10 @@ const Generate = () => {
   const [month, setMonth] = useState(1);
   const [link, setLink] = useState('');
   const generateLink = () => {
+    if(name === '') {
+        alert('Please enter name');
+        return ;
+    }
     setLink(
       `https://birthday-wisher.netlify.app/birthday/${name}/${day}/${month}`
     );
