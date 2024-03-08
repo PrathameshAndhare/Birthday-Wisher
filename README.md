@@ -9,7 +9,7 @@
     npm install react-scripts
 ```
 
-To get it running locally:
+To run it locally:
 
 * Clone this repository.
 * npm install to install all required dependencies.
