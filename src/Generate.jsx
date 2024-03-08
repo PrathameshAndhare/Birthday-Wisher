@@ -12,7 +12,7 @@ const Generate = () => {
         return ;
     }
     setLink(
-      `https://birthday-wisher.netlify.app/birthday/${name}/${day}/${month}`
+      `https://birthday-wisher.app/birthday/${name}/${day}/${month}`
     );
   };
   return (
