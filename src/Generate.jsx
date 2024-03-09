@@ -1,20 +1,23 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 const Generate = () => {
   const [name, setName] = useState('');
   const [day, setDay] = useState(1);
   const [month, setMonth] = useState(1);
-  const [link, setLink] = useState('');
+
+  // Get the history object
+  const history = useHistory();
+
   const generateLink = () => {
-    if(name === '') {
-        alert('Please enter name');
-        return ;
+    if (name === '') {
+      alert('Please enter name');
+      return;
     }
-    setLink(
-      `https://birthday-wisher.app/birthday/${name}/${day}/${month}`
-    );
+    const generatedLink = `birthday/${name}/${day}/${month}`;
+    history.push(generatedLink);
   };
+
   return (
     <div className='page'>
       <h1>Generate Here</h1>
@@ -54,17 +57,6 @@ const Generate = () => {
       <button className='btn' onClick={() => generateLink()}>
         Generate Link
       </button>
-
-      {link !== '' ? (
-        <>
-          <p className='gen-link'>{link}</p>
-          <Link to={`birthday/${name}/${day}/${month}`}>
-            <button className='btn'>Visit Link</button>
-          </Link>
-        </>
-      ) : (
-        ''
-      )}
     </div>
   );
 };
